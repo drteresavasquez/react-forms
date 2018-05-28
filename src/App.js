@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route } from 'react-router-dom';
+import TableOfContents from './components/TableOfContents';
+import Authentication from './components/Authentication';
+import Validation from './components/Validation';
 
 class App extends Component {
+  state = {
+    forms: [
+        {
+            id: 1,
+            component: Authentication,
+            title: "Authentication",
+            route: "/authentication",
+            description: "Using forms for authentication",
+        },
+        {
+            id: 2,
+            component: Validation,
+            title: "Validation",
+            route: "/validation",
+            description: "Using forms for authentication",
+        }
+      ]
+  }
   render() {
+    const forms = this.state.forms.map((form) => (
+      <Route 
+        key={form.id}
+        exact path={form.route} 
+        component={() => <form.component />}/>
+    ));
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+              <Route exact path={'/'} component={() => <TableOfContents forms={this.state.forms}/>}/>
+              {forms}
       </div>
     );
   }

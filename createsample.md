@@ -1,4 +1,4 @@
-# Create Sample Form Component
+# Create A Sample Form Component
 ### Create a new file in `src/components` named `samplecomponent.js`
 ```
 touch src/components/SampleComponent.js

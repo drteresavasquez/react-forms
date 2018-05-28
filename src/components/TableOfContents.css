@@ -1,0 +1,9 @@
+.tableofcontents{
+    margin: 0 auto;
+    padding: 50px;
+    width: 70%;
+}
+
+.tableofcontents h2{
+    padding-bottom: 10px;
+}

@@ -31,6 +31,10 @@ npm install semantic-ui-react
 ```
 npm install semantic-ui-css
 ```
+- React-Router-Dom
+```
+npm install --save react-router-dom
+```
 - WebPack: See next step
 
 ### 5. Add WebPack to your package.json

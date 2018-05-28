@@ -2,7 +2,8 @@
 This is a lesson about ReactJS Forms. Please follow the steps below to get started.
 
 ## Table of Contents
-- Set up your environment: See [**"Quick Setup"**](./quick-startup.md) to get started by cloning this repo or see [**"Set Up From Scatch"**](#set-up-from-scatch) below to get started from scratch.
+- **Set up your environment:** See [**"Quick Setup"**](./quick-startup.md) to get started by cloning this repo or see [**"Set Up From Scatch"**](#set-up-from-scatch) below to get started from scratch.
+- [Create A Sample Form Component](./createsample.md)
 
 ## Set Up From Scatch
 ### 1. Create React App

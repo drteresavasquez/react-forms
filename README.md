@@ -1,41 +1,9 @@
 # React Forms
 This is a lesson about ReactJS Forms. Please follow the steps below to get started.
 
-## Quick Setup
-```
-git clone https://github.com/drteresavasquez/react-forms.git
-cd react-forms
-```
-### Open In Visual Studio Code
-```
-code .
-```
-### Install Dependencies
-```
-npm i
-```
-#### Dependencies Used In This Project
-- Semantic-UI-React
-- Semantic-UI-CSS
-- WebPack
-- StyleGuidist
+See [Quick Setup](./quick-startup.md) to get started by cloning this repo
 
-### Start Your Servers in new terminal tabs
-Note: You can [npm i concurrently](https://www.npmjs.com/package/concurrently) and set up your app to take one command to start all servers.
-#### Tab 1
-```
-npx styleguidist server
-```
-#### Tab 2
-```
-npm start
-```
-#### Tab 3
-```
-json-server --watch -p 4000 db.json
-```
-
-## Set Up Your Own Project
+## Set Up From Scatch
 ### 1. Create React App
 ```
 create-react-app react-forms

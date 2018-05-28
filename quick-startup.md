@@ -27,7 +27,3 @@ npx styleguidist server
 ```
 npm start
 ```
-### Tab 3
-```
-json-server --watch -p 4000 db.json
-```

@@ -17,10 +17,6 @@ module.exports = {
             rel: 'stylesheet',
             href: './src/styles/styleguidist.css'
           }
-        //   {
-        //     rel: 'stylesheet',
-        //     href: './node_modules/font-awesome/css/font-awesome.min.css'
-        //   }
         ]
       }
     },

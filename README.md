@@ -4,7 +4,7 @@ This is a lesson about ReactJS Forms. Please follow the steps below to get start
 ## Table of Contents
 - **Set up your environment:** See [**"Quick Setup"**](./quick-startup.md) to get started by cloning this repo or see [**"Set Up From Scatch"**](#set-up-from-scatch) below to get started from scratch.
 - [Create A Sample Form Component](./createsample.md)
-- Create a Basic Form
+- [Create a Basic Form](./createbasicform.md)
 - Create Double Validation and Authentication Form
 
 ## Set Up From Scatch

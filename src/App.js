@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import TableOfContents from './components/TableOfContents';
-// import BasicForm from './components/forms/BasicForm';
 import formdata from './formdata';
 
 class App extends Component {

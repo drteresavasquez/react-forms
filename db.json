@@ -4,10 +4,49 @@
       "id": 1,
       "name": "Elmer Shields",
       "email": "elmer_shields@yahoo.com",
-      "password": "12345"
+      "password": "123456789"
     }
   ],
   "contacts":[
-    
+    {
+      "id": 1,
+      "ownerID": 1,
+      "name": "This is a test",
+      "email": "email@email.com",
+      "phone": "615-555-5555",
+      "company": "Acme",
+      "position": "Head Honchoita",
+      "notes": "These are the notes I took on this asshole."
+    },
+    {
+      "id": 2,
+      "ownerID": 1,
+      "name": "This is a test",
+      "email": "email@email.com",
+      "phone": "615-555-5555",
+      "company": "Acme",
+      "position": "Head Honchoita",
+      "notes": "These are the notes I took on this asshole."
+    },
+    {
+      "id": 3,
+      "ownerID": 1,
+      "name": "This is a test",
+      "email": "email@email.com",
+      "phone": "615-555-5555",
+      "company": "Acme",
+      "position": "Head Honchoita",
+      "notes": "These are the notes I took on this asshole."
+    },
+    {
+      "id": 4,
+      "ownerID": 1,
+      "name": "This is a test",
+      "email": "email@email.com",
+      "phone": "615-555-5555",
+      "company": "Acme",
+      "position": "Head Honchoita",
+      "notes": "These are the notes I took on this asshole."
+    }
   ]
 }

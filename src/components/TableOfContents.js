@@ -9,7 +9,7 @@ export default class TableOfContents extends Component{
         return(
             <div className="tableofcontents">
             <h2>React Forms - Table of Contents</h2>
-            <TOCList items={this.props.forms} />
+            <TOCList forms={this.props.forms} />
             </div>
         )
     }
@@ -19,18 +19,18 @@ export default class TableOfContents extends Component{
 // Accepts props: id, route, title, description
 class TOCList extends Component{
   render() {
-    const items = this.props.items.map((item) => (
+    const forms = this.props.forms.map((form) => (
       <ListElement
-        key={item.id}
-        id={item.id}
-        route={item.route}
-        title={item.title}
-        description={item.description}
+        key={form.id}
+        id={form.id}
+        route={form.route}
+        title={form.title}
+        description={form.description}
       />
     ));
     return (
       <div id='tocitems'>
-        {items}
+        {forms}
       </div>
     );
 }

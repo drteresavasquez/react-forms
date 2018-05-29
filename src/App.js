@@ -3,7 +3,6 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import TableOfContents from './components/TableOfContents';
 import Authentication from './components/Authentication';
-import Validation from './components/Validation';
 
 class App extends Component {
   state = {
@@ -11,16 +10,9 @@ class App extends Component {
         {
             id: 1,
             component: Authentication,
-            title: "Authentication",
+            title: "Authentication & Validation",
             route: "/authentication",
-            description: "Using forms for authentication",
-        },
-        {
-            id: 2,
-            component: Validation,
-            title: "Validation",
-            route: "/validation",
-            description: "Using forms for authentication",
+            description: "Looking at two levels of validation. 1. The Form and 2. The authentication procedure. Also, looking at the inverse of data up to the authentication component.",
         }
       ]
   }

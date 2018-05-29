@@ -1,6 +1,6 @@
 module.exports = {
     components: 'src/components/**/*.js',
-    // ignore: ['**/components/views/*.js'],
+    ignore: ['**/components/TableOfContents.js'],
     ribbon: {
       url: 'http://github.com/drteresavasquez',
       text: 'See App In Action'

@@ -35,6 +35,10 @@ npm install semantic-ui-css
 ```
 npm install --save react-router-dom
 ```
+- JSON Server
+```
+npm i json-server
+```
 - WebPack: See next step
 
 ### 5. Add WebPack to your package.json
@@ -105,4 +109,8 @@ npx styleguidist server
 #### Tab 2
 ```
 npm start
+```
+#### Tab 3
+```
+json-server --watch -p 4000 db.json
 ```

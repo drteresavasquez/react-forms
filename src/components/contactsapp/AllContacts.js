@@ -49,7 +49,7 @@ export default class AllContacts extends Component{
     render(){
         return(
             <div>
-            <h1>All Contacts</h1>
+            <h2>All Contacts</h2>
             <ContactsList contacts={this.state.contacts}/>
             </div>
         )
@@ -69,7 +69,9 @@ class ContactsList extends Component{
         ));
         return(
             <div>
-                {contacts}
+                <Card.Group>
+                    {contacts}
+                </Card.Group>
             </div>
         )
     }
@@ -78,17 +80,14 @@ class ContactsList extends Component{
 
 function CardExampleHeaderCard(props){
         return(
-            // <Card.Group>
-            //     <Card>
-            //     <Card.Content>
-            //         <Card.Header>{props.name}</Card.Header>
-            //         <Card.Meta>{props.company}</Card.Meta>
-            //         <Card.Description>{props.notes}</Card.Description>
-            //     </Card.Content>
-            //     </Card>
-            // </Card.Group>
-
-
+            
+                // <Card>
+                // <Card.Content>
+                //     <Card.Header>{props.name}</Card.Header>
+                //     <Card.Meta>{props.company}</Card.Meta>
+                //     <Card.Description>{props.notes}</Card.Description>
+                // </Card.Content>
+                // </Card>
 
                 <Card>
                     <Image src='/assets/images/avatar/large/daniel.jpg' />

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './main.css';
 import LoginForm from './LoginForm';
 import AllContacts from './AllContacts';
+import { Divider } from 'semantic-ui-react'
+
 
 export default class Authentication extends Component{
     state = {
@@ -44,6 +46,7 @@ export default class Authentication extends Component{
         return(
             <div className="main">
                 <h1>Welcome to Contact App</h1>
+                <Divider section />
                 {this.isUserAuthed()}
             </div>
         )

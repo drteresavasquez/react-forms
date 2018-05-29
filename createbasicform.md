@@ -177,5 +177,37 @@ state = {
   }
 }
 ```
+`BasicForm.js` is doing a lot of stuff!
+When we initialize the component in `Basic.js` we will pass it the user object in state as props. First, let's look at the `onInputChange` function.
 
+This function allows all user values to be compiled into an object and set state on change so that you don't need multiple functions to handle each input field.
+```js
+
+onInputChange = evt => {
+    //Object.assign() clones the fields object in state and returns the target object. It has a signature of Object.assign(target, ...sources).
+    const fields = Object.assign({}, this.state.fields);
+    fields[evt.target.name] = evt.target.value;
+    this.setState({fields});
+  };
+```
+
+The `onFormSubmit` function handles when the submit button is clicked. It passes the user input up to the parent component by calling a function that was passed as props. This is called "Inverse data flow."
+
+```js
+onFormSubmit = evt => {
+    const email = this.state.fields.email;
+    const name = this.state.fields.name;
+
+    // The function that was passed as props from the parent
+    this.props.saveUpdate(name, email);
+
+    this.setState({
+      fields: {
+        name: '',
+        email: ''
+      }
+    });
+    evt.preventDefault();
+  };
+```
 

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './main.css';
 import LoginForm from './LoginForm';
 import AllContacts from './AllContacts';
-import { Divider } from 'semantic-ui-react'
-
+import { Divider } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default class Authentication extends Component{
     state = {
@@ -48,6 +48,11 @@ export default class Authentication extends Component{
                 <h1>Welcome to Contact App</h1>
                 <Divider section />
                 {this.isUserAuthed()}
+                <Divider section />
+
+                <Link to={`/`} className='backLink'>
+                    Back to Table of Contents
+                </Link>
             </div>
         )
     }

@@ -11,7 +11,7 @@ export default class Basic extends Component{
             name: "Teresa",
             email: "this@that.com"
         },
-        edit: false,
+        edit: true,
     }
 
     editProfile = () => {
@@ -50,7 +50,6 @@ export default class Basic extends Component{
             edit: true,
         })
     }
-
 
     render(){
         return(

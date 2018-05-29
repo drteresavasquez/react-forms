@@ -211,7 +211,7 @@ onFormSubmit = evt => {
   };
 ```
 
-### Basic Completed Code
+### `Basic.js` Completed Code
 
 ```js
 import React, { Component } from 'react';

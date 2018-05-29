@@ -94,11 +94,8 @@ export default class Basic extends Component{
 ```
 
 #### We see this:
-
 ![alt text](./public/img/editfalse.png "Edit is set to false")
-
 #### Change the edit in state to true and this is how it renders:
-
 ![alt text](./public/img/edittrue.png "Edit is set to true")
 
 ### Add code to `BasicForm.js`

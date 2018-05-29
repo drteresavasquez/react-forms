@@ -5,11 +5,9 @@
       "name": "Elmer Shields",
       "email": "elmer_shields@yahoo.com",
       "password": "12345"
-    },
-    {
-      "email": "dallin.orn65@gmail.com",
-      "password": "fasfasdfasdf",
-      "id": 2
     }
+  ],
+  "contacts":[
+    
   ]
 }

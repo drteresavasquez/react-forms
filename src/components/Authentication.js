@@ -12,7 +12,8 @@ export default class Authentication extends Component{
         user: {},
         fieldErrors: false
       }
-      sendDeets = (action, email, password) =>{
+
+      sendDeets = (action, email, password) => {
         fetch(`http://localhost:4000/users?email=${email}`)
         .then((data)=>{
           return data.json();
@@ -38,7 +39,7 @@ export default class Authentication extends Component{
             this.setState({ 
               authed: false,
               fieldErrors: true,
-              errorMessage: "A user with that email already exists"
+              errorMessage: "A user with that email already exists. Login!"
             });
           }
           // No user exists, create new user

@@ -4,10 +4,9 @@ import { Form, Input, Button } from 'semantic-ui-react'
 export default class BasicForm extends Component{
 state = {
     fields: {
-      name: this.props.person.name,
+      name: this.props.person.name || '',
       email: this.props.person.email
-    },
-    fieldErrors: {},
+    }
   };
 
   onFormSubmit = evt => {
@@ -34,7 +33,6 @@ state = {
     return (
       <div>
         <h3>Edit Your Profile</h3>
-
          <Form>
             <Form.Group widths='equal'>
             <Form.Field>

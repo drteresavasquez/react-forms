@@ -92,13 +92,17 @@ export default class Basic extends Component{
         )
     }
 ```
-We see this:
+
+#### We see this:
+
 ![alt text](./public/img/editfalse.png "Edit is set to false")
 
-Change the edit in state to true and this is how it renders:
+#### Change the edit in state to true and this is how it renders:
+
 ![alt text](./public/img/edittrue.png "Edit is set to true")
 
 ### Add code to `BasicForm.js`
+
 Add the follwing to `BasicForm.js`.
 
 NOTE: Forms ALWAYS are stateful because they are capturing the user input in order to do something with it...

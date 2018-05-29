@@ -18,8 +18,7 @@ export default class Authentication extends Component{
           return data.json();
         }).then((userArray)=>{
           //User doesn't exist
-            if (userArray.length===0 && 
-                action==="login"){
+            if (userArray.length===0 && action==="login"){
                 this.setState({ 
                   authed: false,
                   fieldErrors: true,
@@ -27,54 +26,48 @@ export default class Authentication extends Component{
                 });
             }
             // Password is incorrect
-            else if(userArray[0].password !== password && 
-                    userArray.length !== 0 && 
-                    action==="login"){
-              this.setState({ 
-                authed: false,
-                fieldErrors: true,
-                errorMessage: "Your Password is Incorrect"
+        else if(userArray.length !== 0 && userArray[0].password !== password && action==="login"){
+            this.setState({ 
+              authed: false,
+              fieldErrors: true,
+              errorMessage: "Your Password is Incorrect"
+            });
+          }
+          // Email already taken
+          else if(userArray.length !== 0 && action==="signup"){
+            this.setState({ 
+              authed: false,
+              fieldErrors: true,
+              errorMessage: "A user with that email already exists"
+            });
+          }
+          // No user exists, create new user
+          else if(userArray.length===0 && action==="signup"){
+            let dataObj = {
+              "email":email, 
+              "password":password
+            }
+            return fetch('http://localhost:4000/users', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataObj)
+              }).then((response) => {
+                return response.json();
+              }).then((data) => {
+                this.sendDeets("login", data.email, data.password);
               });
-            }
-            // Email already taken
-            else if(userArray.length !== 0 && 
-                    action==="signup"){
-                    this.setState({ 
-                        authed: false,
-                        fieldErrors: true,
-                        errorMessage: "A user with that email already exists"
-                    });
-            }
-            // No user exists, create new user
-            else if(userArray.length===0 && 
-                    action==="signup"){
-                    let dataObj = {
-                        "email":email, 
-                        "password":password
-                    }
-                    return fetch('http://localhost:4000/users', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(dataObj)
-                    })
-                    .then((response) => {
-                    return response.json();
-                    })
-                    .then((data) => {
-                    this.sendDeets("login", data.email, data.password);
-                    }); 
-            }
-            // Login!
-            else{
-                this.setState({ 
-                    user: userArray[0],
-                    authed: true,
-                });
-            }
-        })
-      }
+          }
+          // Login!
+          else{
+              this.setState({ 
+                  user: userArray[0],
+                  authed: true,
+              });
+          }
+      })
+    }
     
       authenticated = () => {
         if(!this.state.authed && this.state.fieldErrors){

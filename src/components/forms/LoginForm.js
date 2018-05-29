@@ -19,7 +19,7 @@ export default class LoginForm extends React.Component{
     if (Object.keys(fieldErrors).length) return;
 
     /********* PLACE INVERSE DATA FLOW HERE ************/
-    //   this.props.sendDeets(evt.target.id, user.email, user.password);
+      this.props.sendDeets(evt.target.id, user.email, user.password);
     
       evt.preventDefault();
   };

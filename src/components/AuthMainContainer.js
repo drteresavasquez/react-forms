@@ -5,7 +5,7 @@ export default class AuthMainContainer extends Component{
         return(
             <div>
                 <h4>You Have Been Authenticated!</h4>
-                <p>Hello, {this.props.user.name}!</p>
+                <p>Hello, {this.props.user.email}!</p>
             </div>
         )
     }

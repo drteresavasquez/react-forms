@@ -1,10 +1,15 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Elmer Shields",
-        "email": "elmer_shields@yahoo.com",
-        "password": "12345"
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "name": "Elmer Shields",
+      "email": "elmer_shields@yahoo.com",
+      "password": "12345"
+    },
+    {
+      "email": "dallin.orn65@gmail.com",
+      "password": "fasfasdfasdf",
+      "id": 2
+    }
+  ]
+}

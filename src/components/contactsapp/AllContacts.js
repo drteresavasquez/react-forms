@@ -3,49 +3,20 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 
 export default class AllContacts extends Component{
     state = {
-        contacts:[
-            {
-              "id": 1,
-              "ownerID": 1,
-              "name": "This is a test",
-              "email": "email@email.com",
-              "phone": "615-555-5555",
-              "company": "Acme",
-              "position": "Head Honchoita",
-              "notes": "These are the notes I took on this asshole."
-            },
-            {
-              "id": 2,
-              "ownerID": 1,
-              "name": "This is a test",
-              "email": "email@email.com",
-              "phone": "615-555-5555",
-              "company": "Acme",
-              "position": "Head Honchoita",
-              "notes": "These are the notes I took on this asshole."
-            },
-            {
-              "id": 3,
-              "ownerID": 1,
-              "name": "This is a test",
-              "email": "email@email.com",
-              "phone": "615-555-5555",
-              "company": "Acme",
-              "position": "Head Honchoita",
-              "notes": "These are the notes I took on this asshole."
-            },
-            {
-              "id": 4,
-              "ownerID": 1,
-              "name": "This is a test",
-              "email": "email@email.com",
-              "phone": "615-555-5555",
-              "company": "Acme",
-              "position": "Head Honchoita",
-              "notes": "These are the notes I took on this asshole."
-            }
-          ]
+        contacts:[]
     }
+
+    componentDidMount(){
+        fetch(`http://localhost:4000/contacts?ownerID=${this.props.user.id}`)
+        .then((data)=>{
+            return data.json();
+        }).then((userContacts)=>{
+            this.setState({
+                contacts: userContacts
+            })
+        })
+    }
+
     render(){
         return(
             <div>
@@ -65,6 +36,7 @@ class ContactsList extends Component{
                 name={contact.name}
                 company={contact.company}
                 notes={contact.notes}
+                image={contact.image}
             />
         ));
         return(
@@ -80,17 +52,8 @@ class ContactsList extends Component{
 
 function CardExampleHeaderCard(props){
         return(
-            
-                // <Card>
-                // <Card.Content>
-                //     <Card.Header>{props.name}</Card.Header>
-                //     <Card.Meta>{props.company}</Card.Meta>
-                //     <Card.Description>{props.notes}</Card.Description>
-                // </Card.Content>
-                // </Card>
-
                 <Card>
-                    <Image src='/assets/images/avatar/large/daniel.jpg' />
+                    <Image src={props.image} />
                     <Card.Content>
                     <Card.Header>{props.name}</Card.Header>
                     <Card.Meta>{props.company}</Card.Meta>

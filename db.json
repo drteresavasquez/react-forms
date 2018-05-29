@@ -4,7 +4,8 @@
       "id": 1,
       "name": "Elmer Shields",
       "email": "elmer_shields@yahoo.com",
-      "password": "123456789"
+      "password": "123456789",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     }
   ],
   "contacts":[
@@ -16,7 +17,8 @@
       "phone": "615-555-5555",
       "company": "Acme",
       "position": "Head Honchoita",
-      "notes": "These are the notes I took on this asshole."
+      "notes": "These are the notes I took on this wonderful person.",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/therealmarvin/128.jpg"
     },
     {
       "id": 2,
@@ -26,7 +28,8 @@
       "phone": "615-555-5555",
       "company": "Acme",
       "position": "Head Honchoita",
-      "notes": "These are the notes I took on this asshole."
+      "notes": "These are the notes I took on wonderful person.",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/hai_ninh_nguyen/128.jpg"
     },
     {
       "id": 3,
@@ -36,7 +39,8 @@
       "phone": "615-555-5555",
       "company": "Acme",
       "position": "Head Honchoita",
-      "notes": "These are the notes I took on this asshole."
+      "notes": "These are the notes I took on wonderful person.",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/pmeissner/128.jpg"
     },
     {
       "id": 4,
@@ -46,7 +50,8 @@
       "phone": "615-555-5555",
       "company": "Acme",
       "position": "Head Honchoita",
-      "notes": "These are the notes I took on this asshole."
+      "notes": "These are the notes I took on wonderful person.",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/nbirckel/128.jpg"
     }
   ]
 }

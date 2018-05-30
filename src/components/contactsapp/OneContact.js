@@ -48,16 +48,6 @@ export default class OneContact extends React.Component{
             })
     }
 
-    deleteContact = () => {
-        return fetch(`http://localhost:4000/contacts/${this.props.id}`, {
-              method: 'DELETE',
-              headers: {
-                'Content-Type': 'application/json'
-              }
-            }).then((response) => {
-            })
-    }
-
     editContact = () =>{
         this.setState({
             edit: true
@@ -94,14 +84,6 @@ export default class OneContact extends React.Component{
             >
             <Icon name='edit' />
                     Edit Contact
-            </Button>
-            <Divider hidden />
-            <Button fluid
-            color='red'
-            onClick={this.deleteContact}
-            >
-            <Icon name='backward' />
-                Delete Contact
             </Button>
             <Divider hidden />
             <Button fluid

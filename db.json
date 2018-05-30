@@ -2,6 +2,7 @@
   "users": [
     {
       "id": 1,
+      "ownerID": 1,
       "name": "Elmer Shields",
       "email": "elmer_shields@yahoo.com",
       "password": "123456789",
@@ -11,39 +12,19 @@
   "contacts": [
     {
       "id": 1,
-      "ownerID": 1,
-      "name": "Sepia Guy 2",
-      "email": "email@email.com",
-      "phone": "615-555-5555",
-      "company": "Acme",
-      "position": "Head Honchoita",
-      "notes": "These are the notes I took on wonderful person.",
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/hai_ninh_nguyen/128.jpg",
-      "rating": 5
+      "ownerID": 2,
+      "name": "Elmer Shields",
+      "email": "elmer_shields@yahoo.com",
+      "password": "123456789",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     },
     {
-      "id": 3,
+      "id": 2,
       "ownerID": 1,
-      "name": "Glasses Guy",
-      "email": "email@email.com",
-      "phone": "615-555-5555",
-      "company": "Acme",
-      "position": "Head Honchoita",
-      "notes": "These are the notes I took on wonderful person.",
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/pmeissner/128.jpg",
-      "rating": 5
-    },
-    {
-      "id": 4,
-      "ownerID": 1,
-      "name": "This is a test",
-      "email": "email@email.net",
-      "phone": "615-555-5555",
-      "company": "Acme",
-      "position": "Head Honchoita",
-      "notes": "These are the notes I took on wonderful person.",
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/nbirckel/128.jpg",
-      "rating": 5
+      "name": "Elmer Shields",
+      "email": "elmer_shields@yahoo.com",
+      "password": "123456789",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     }
   ]
 }

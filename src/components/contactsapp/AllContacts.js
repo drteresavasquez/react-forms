@@ -34,11 +34,24 @@ export default class AllContacts extends Component{
         })
     }
 
+    deleteContact = (id) => {
+        return fetch(`http://localhost:4000/contacts/${id}`, {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            }).then((response) => {
+                const storedUser = sessionStorage.getItem("user");
+                const storedUserObj = JSON.parse(storedUser);
+                this.loadContacts(storedUserObj.id);
+            })
+    }
+
     render(){
         return(
             <div>
             <h2>All Contacts</h2>
-                    <ContactsList contacts={this.state.contacts}/>
+                    <ContactsList contacts={this.state.contacts} deleteContact={this.deleteContact}/>
             </div>
         )
     }
@@ -55,6 +68,8 @@ class ContactsList extends Component{
                 notes={contact.notes}
                 image={contact.image}
                 rating={contact.rating}
+                phone={contact.phone}
+                deleteContact={this.props.deleteContact}
             />
         ));
         return(
@@ -68,6 +83,7 @@ class ContactsList extends Component{
 
 }
 
+
 class CardExampleHeaderCard extends Component{
     render(){
         return(
@@ -75,10 +91,16 @@ class CardExampleHeaderCard extends Component{
                 <Card.Content>
                     <Image floated='right' size='mini' src={this.props.image} />
                     <Card.Header>
-                    <Link to={`/contactsapp/${this.props.id}`}>{this.props.name}</Link>
+                    <Link to={`/contactsapp/${this.props.id}`}>{this.props.name} ({this.props.company}) </Link>
                     </Card.Header>
-                    <Card.Meta>
-                    {this.props.company}
+                    <Card.Meta>  
+                    <Button 
+                        size='mini' 
+                        color='red'
+                        onClick={()=>{this.props.deleteContact(this.props.id)}}
+                    >
+                        Delete Contact                       
+                    </Button>
                     </Card.Meta>
                     <Card.Description>
                     <strong>{this.props.notes}</strong>
@@ -86,10 +108,10 @@ class CardExampleHeaderCard extends Component{
                 </Card.Content>
                 <Card.Content extra>
                     <div className='ui four buttons'>
-                    <Button basic color='green' icon="call"></Button>
-                    <Button basic color='green' icon="talk"></Button>
-                    <Button basic color='green' icon="mail"></Button>
-                    <Button basic color='blue'>Edit</Button>
+                    <Button basic color='green' icon="call" href={`tel:${this.props.phone}`}></Button>
+                    <Button basic color='green' icon="talk" href={`sms:${this.props.phone}`}></Button>
+                    <Button basic color='blue' icon="mail" href={`mailto:${this.props.email}`}></Button>
+                    <Button basic color='orange' as={Link} to={`/contactsapp/${this.props.id}`}>Edit</Button>
                     </div>
                 </Card.Content>
             </Card>

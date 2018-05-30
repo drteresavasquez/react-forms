@@ -12,10 +12,13 @@
   "contacts": [
     {
       "id": 1,
-      "ownerID": 2,
+      "ownerID": 1,
       "name": "Elmer Shields",
       "email": "elmer_shields@yahoo.com",
-      "password": "123456789",
+      "company": "ACME",
+      "notes": "These are some notes...",
+      "phone": "615-739-3124",
+      "rating": 5,
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     },
     {
@@ -23,7 +26,10 @@
       "ownerID": 1,
       "name": "Elmer Shields",
       "email": "elmer_shields@yahoo.com",
-      "password": "123456789",
+      "company": "ACME",
+      "notes": "These are some notes...",
+      "phone": "615-739-3124",
+      "rating": 5,
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     }
   ]

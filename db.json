@@ -2,14 +2,35 @@
   "users": [
     {
       "id": 1,
+      "ownerID": 1,
       "name": "Elmer Shields",
       "email": "elmer_shields@yahoo.com",
-      "password": "123456789"
+      "password": "123456789",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "ownerID": 1,
+      "name": "Bob Shields",
+      "email": "elmer_shields@yahoo.com",
+      "company": "ACME",
+      "notes": "These are some notes...",
+      "phone": "715-921-6517",
+      "rating": 5,
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     },
     {
-      "email": "dallin.orn65@gmail.com",
-      "password": "fasfasdfasdf",
-      "id": 2
+      "id": 2,
+      "ownerID": 1,
+      "name": "Mista Shields",
+      "email": "elmer_shields@yahoo.com",
+      "company": "ACME",
+      "notes": "These are some notes...",
+      "phone": "615-739-3124",
+      "rating": 5,
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     }
   ]
 }

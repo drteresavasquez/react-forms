@@ -10,6 +10,19 @@ export default class Authentication extends Component{
     }
 
 
+    componentDidMount(){
+        const stored = sessionStorage.getItem("user");
+        if(stored){
+            const parseDB = JSON.parse(stored);
+            console.log("parseDB", parseDB);
+            this.setState({
+                authed: true,
+                user: parseDB
+            })
+        }
+    }
+
+
     authenticateuser = (email, password) => {
         fetch(`http://localhost:4000/users?email=${email}&&${password}`)
         .then((data)=>{
@@ -23,6 +36,8 @@ export default class Authentication extends Component{
                     user: userArray[0],
                     authed: true
                 })
+                const userObj = JSON.stringify(userArray[0]);
+                sessionStorage.setItem('user', userObj);
             }
         })
         // if(this.state.user.email === email && this.state.user.password === password){

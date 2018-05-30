@@ -13,18 +13,18 @@
     {
       "id": 1,
       "ownerID": 1,
-      "name": "Elmer Shields",
+      "name": "Bob Shields",
       "email": "elmer_shields@yahoo.com",
       "company": "ACME",
       "notes": "These are some notes...",
-      "phone": "615-739-3124",
+      "phone": "715-921-6517",
       "rating": 5,
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     },
     {
       "id": 2,
       "ownerID": 1,
-      "name": "Elmer Shields",
+      "name": "Mista Shields",
       "email": "elmer_shields@yahoo.com",
       "company": "ACME",
       "notes": "These are some notes...",

@@ -18,8 +18,8 @@ class App extends Component {
     ));
     return (
       <div>
-            <Route exact path={'/'} component={() => <TableOfContents forms={this.state.forms}/>}/>
-            <Route exact path='/contactsapp/:id' component={GetContact} />
+            <Route exact path={'/'} component={() => <TableOfContents forms= {this.state.forms}/>}/>
+            <Route exact path='/contactsapp/:id' component={GetContact}/>
               {forms}
       </div>
     );

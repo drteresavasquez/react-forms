@@ -11,7 +11,7 @@ export default class Basic extends Component{
             name: "Teresa",
             email: "this@that.com"
         },
-        edit: true,
+        edit: false,
     }
 
     editProfile = () => {

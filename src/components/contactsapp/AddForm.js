@@ -4,13 +4,13 @@ import { Form, Input, Button } from 'semantic-ui-react'
 export default class EditForm extends Component{
 state = {
     fields: {
-      name: this.props.person.name || '',
-      email: this.props.person.email  || '',
-      company: this.props.person.company  || '',
-      notes: this.props.person.notes  || '',
-      phone: this.props.person.phone  || '',
-      rating: this.props.person.rating  || '',
-      image: this.props.person.image  || '',
+      name: '',
+      email: '',
+      company: '',
+      notes: '',
+      phone: '',
+      rating: '',
+      image: '',
     }
   };
 
@@ -23,7 +23,7 @@ state = {
     userObject.phone = this.state.fields.phone;
     userObject.rating = this.state.fields.rating;
     userObject.image = this.state.fields.image;
-    this.props.saveUpdate(userObject);
+    this.props.saveUpdate(userObject, "edit");
 
     console.log("userObject", userObject);
 

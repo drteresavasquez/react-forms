@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Card, Button, Image } from 'semantic-ui-react'
+import { Card, Button, Image, Divider, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-// import { Route } from 'react-router-dom';
-// import GetContact from './GetContact';
+import AddForm from './AddForm';
 
-
-export default class AllContacts extends Component{
+export default class AllContacts extends Component {
     state = {
-        contacts:[]
+        contacts:[],
+        addContact: false,
     }
 
     componentDidMount(){
@@ -19,7 +18,6 @@ export default class AllContacts extends Component{
         }else{
             this.loadContacts(this.props.user.id)
         }
-        
     }
 
     loadContacts = (id) => {
@@ -32,6 +30,61 @@ export default class AllContacts extends Component{
             })
             console.log(userContacts)
         })
+    }
+
+    saveUpdate = (userObject) => {
+        userObject.ownerID = this.props.user.id
+        return fetch(`http://localhost:4000/contacts/`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userObject)
+        }).then((response) => {
+          return response.json();
+        }).then((data) => {
+            this.setState({
+                contact: data,
+                addContact: false,
+            })
+            this.loadContacts(this.props.user.id);
+        })          
+}
+
+    addContact = () =>{
+        this.setState({
+            addContact: true
+        })
+    }
+    cancelUpdate = () =>{
+        this.setState({
+            addContact: false
+        })
+    }
+
+    openForm = () =>{
+        if(this.state.addContact){
+            return(
+                <div>
+                <Divider section />
+                <AddForm title="Add Contact" saveUpdate={this.saveUpdate} cancelUpdate={this.cancelUpdate}/>
+                <Divider section />
+                </div>
+            )
+        }else{
+            return(
+                <div>
+                    <Button 
+                        color='green' 
+                        onClick={this.addContact}
+                    >
+                    <Icon name='add user' />
+                        Add Contact
+                    </Button>
+                    <Divider section />
+                </div>
+            )
+        }
     }
 
     deleteContact = (id) => {
@@ -47,15 +100,17 @@ export default class AllContacts extends Component{
             })
     }
 
-    render(){
+    render () {
         return(
             <div>
-            <h2>All Contacts</h2>
-                    <ContactsList contacts={this.state.contacts} deleteContact={this.deleteContact}/>
+                {this.openForm()}
+                <h2>All Contacts</h2>
+                <ContactsList contacts={this.state.contacts} />
             </div>
         )
     }
 }
+
 
 class ContactsList extends Component{
     render(){
@@ -69,7 +124,8 @@ class ContactsList extends Component{
                 image={contact.image}
                 rating={contact.rating}
                 phone={contact.phone}
-                deleteContact={this.props.deleteContact}
+                email={contact.email}
+                // deleteContact={this.props.deleteContact}
             />
         ));
         return(
@@ -92,7 +148,7 @@ class CardExampleHeaderCard extends Component{
                     <Image floated='right' size='mini' src={this.props.image} />
                     <Card.Header>
                     <Link to={`/contactsapp/${this.props.id}`}>{this.props.name} ({this.props.company}) </Link>
-                    </Card.Header>AllCon
+                    </Card.Header>
                     <Card.Meta>  
                     <Button 
                         size='mini' 
@@ -108,7 +164,7 @@ class CardExampleHeaderCard extends Component{
                 </Card.Content>
                 <Card.Content extra>
                     <div className='ui four buttons'>
-                    <Button basic color='green' icon="call" href={`tel:${this.props.phone}`}></Button>
+                    <Button basic color='teal' icon="call" href={`tel:${this.props.phone}`}></Button>
                     <Button basic color='green' icon="talk" href={`sms:${this.props.phone}`}></Button>
                     <Button basic color='blue' icon="mail" href={`mailto:${this.props.email}`}></Button>
                     <Button basic color='orange' as={Link} to={`/contactsapp/${this.props.id}`}>Edit</Button>

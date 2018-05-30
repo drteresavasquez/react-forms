@@ -2,29 +2,28 @@ import React, { Component } from 'react';
 import './main.css';
 import LoginForm from './LoginForm';
 import AllContacts from './AllContacts';
-import { Divider } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { Divider } from 'semantic-ui-react';
 
-export default class Authentication extends Component{
+export default class Contacts extends Component{
     state = {
         authed: false,
-        user: {
-            id: 1
-        }
+        user: {}
     }
 
     componentDidMount(){
         const stored = sessionStorage.getItem("user");
         if(stored){
             const parseDB = JSON.parse(stored);
-            console.log("parseDB", parseDB);
+            // console.log("parseDB", parseDB);
             this.setState({
                 authed: true,
                 user: parseDB
             })
-        }
+        }   
     }
 
+    //create method to authenticate user
     authenticateUser = (email, password) => {
         console.log(email, password)
         fetch(`http://localhost:4000/users?email=${email}&&${password}`)
@@ -46,27 +45,24 @@ export default class Authentication extends Component{
     }
 
     isUserAuthed = () => {
-        if(this.state.authed){
-            return(
-                <div>
-                <AllContacts user={this.state.user}/>
-                </div>
+        if (this.state.authed){
+            return (
+                <AllContacts user={this.state.user} />
             )
-        }else{
-            return(
-                <LoginForm authenticateUser={this.authenticateUser}/>
+        } else {
+            return ( 
+                <LoginForm authenticateUser = {this.authenticateUser}/>
             )
         }
     }
-
 
 
     render(){
         return(
             <div className="main">
                 <h1>Welcome to Contact App</h1>
-                <Divider section />
                 {this.isUserAuthed()}
+                
                 <Divider section />
 
                 <Link to={`/`} className='backLink'>

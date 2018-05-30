@@ -1,5 +1,14 @@
 .main{
     margin: 0 auto;
     padding: 50px;
-    width: 70%;
+    width: 100%;
+}
+
+.userProfilePage{
+    padding:60px;
+    border: 1px solid orange;
+    border-radius: 10px;
+}
+.profileImage{
+    width: 100% !important;
 }

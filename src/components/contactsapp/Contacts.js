@@ -8,7 +8,21 @@ import { Link } from 'react-router-dom';
 export default class Authentication extends Component{
     state = {
         authed: false,
-        user: {}
+        user: {
+            id: 1
+        }
+    }
+
+    componentDidMount(){
+        const stored = sessionStorage.getItem("user");
+        if(stored){
+            const parseDB = JSON.parse(stored);
+            console.log("parseDB", parseDB);
+            this.setState({
+                authed: true,
+                user: parseDB
+            })
+        }
     }
 
     authenticateUser = (email, password) => {
@@ -24,6 +38,8 @@ export default class Authentication extends Component{
                     user: userArray[0],
                     authed: true
                 })
+                const userObj = JSON.stringify(userArray[0]);
+                sessionStorage.setItem('user', userObj);
             }
         })
     }
@@ -31,7 +47,9 @@ export default class Authentication extends Component{
     isUserAuthed = () => {
         if(this.state.authed){
             return(
+                <div>
                 <AllContacts user={this.state.user}/>
+                </div>
             )
         }else{
             return(

@@ -8,39 +8,30 @@
       "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
     }
   ],
-  "contacts":[
+  "contacts": [
     {
       "id": 1,
       "ownerID": 1,
-      "name": "This is a test",
-      "email": "email@email.com",
-      "phone": "615-555-5555",
-      "company": "Acme",
-      "position": "Head Honchoita",
-      "notes": "These are the notes I took on this wonderful person.",
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/therealmarvin/128.jpg"
-    },
-    {
-      "id": 2,
-      "ownerID": 1,
-      "name": "This is a test",
+      "name": "Sepia Guy",
       "email": "email@email.com",
       "phone": "615-555-5555",
       "company": "Acme",
       "position": "Head Honchoita",
       "notes": "These are the notes I took on wonderful person.",
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/hai_ninh_nguyen/128.jpg"
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/hai_ninh_nguyen/128.jpg",
+      "rating": 5
     },
     {
       "id": 3,
       "ownerID": 1,
-      "name": "This is a test",
+      "name": "Glasses Guy",
       "email": "email@email.com",
       "phone": "615-555-5555",
       "company": "Acme",
       "position": "Head Honchoita",
       "notes": "These are the notes I took on wonderful person.",
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/pmeissner/128.jpg"
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/pmeissner/128.jpg",
+      "rating": 5
     },
     {
       "id": 4,
@@ -51,7 +42,8 @@
       "company": "Acme",
       "position": "Head Honchoita",
       "notes": "These are the notes I took on wonderful person.",
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/nbirckel/128.jpg"
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/nbirckel/128.jpg",
+      "rating": 5
     }
   ]
 }

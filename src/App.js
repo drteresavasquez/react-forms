@@ -3,6 +3,7 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import TableOfContents from './components/TableOfContents';
 import formdata from './formdata';
+import GetContact from './components/contactsapp/GetContact';
 
 class App extends Component {
   state = {
@@ -18,6 +19,7 @@ class App extends Component {
     return (
       <div>
             <Route exact path={'/'} component={() => <TableOfContents forms={this.state.forms}/>}/>
+            <Route exact path='/contactsapp/:id' component={GetContact} />
               {forms}
       </div>
     );

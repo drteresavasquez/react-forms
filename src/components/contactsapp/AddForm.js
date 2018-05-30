@@ -11,10 +11,11 @@ state = {
       phone: '',
       rating: '',
       image: '',
+      title: '',
     }
   };
 
-  onFormSubmit = (evt, action) => {
+  onFormSubmit = (evt) => {
     let userObject = {}
     userObject.email = this.state.fields.email;
     userObject.name = this.state.fields.name;
@@ -23,7 +24,8 @@ state = {
     userObject.phone = this.state.fields.phone;
     userObject.rating = this.state.fields.rating;
     userObject.image = this.state.fields.image;
-    this.props.saveUpdate(userObject, "edit");
+    userObject.title = this.state.fields.title;
+    this.props.saveUpdate(userObject);
 
     console.log("userObject", userObject);
 
@@ -36,6 +38,7 @@ state = {
         phone: '',
         rating: '',
         image: '',
+        title: '',
       }
     });
     evt.preventDefault();
@@ -54,7 +57,7 @@ state = {
          <Form>
             <Form.Group widths='equal'>
             <Form.Field>
-                <label>Update Name</label>
+                <label>Contact Name</label>
                 <Input 
                     fluid placeholder='Name' 
                     name="name"
@@ -63,7 +66,7 @@ state = {
                 />
             </Form.Field>
             <Form.Field>
-                <label>Update Email</label>
+                <label>Contact Email</label>
                 <Input 
                     fluid placeholder='Email' 
                     name="email"
@@ -75,7 +78,7 @@ state = {
             </Form.Group>
             <Form.Group widths='equal'>
             <Form.Field>
-                <label>Update Company</label>
+                <label>Contact Company</label>
                 <Input 
                     fluid placeholder='Company' 
                     name="company"
@@ -85,7 +88,7 @@ state = {
                 />
             </Form.Field>
             <Form.Field>
-                <label>Update Phone</label>
+                <label>Contact Phone</label>
                 <Input 
                     fluid placeholder='Phone' 
                     name="phone"
@@ -97,7 +100,7 @@ state = {
             </Form.Group>
             <Form.Group widths='equal'>
             <Form.Field>
-                <label>Update Rating</label>
+                <label>Contact Rating</label>
                 <Input 
                     fluid placeholder='Rating' 
                     name="rating"
@@ -107,7 +110,17 @@ state = {
                 />
             </Form.Field>
             <Form.Field>
-                <label>Update Image</label>
+                <label>Contact Title</label>
+                <Input 
+                    fluid placeholder='Title' 
+                    name="title"
+                    type='text'
+                    value={this.state.fields.title}
+                    onChange={this.onInputChange}
+                />
+            </Form.Field>
+            <Form.Field>
+                <label>Contact Image</label>
                 <Input 
                     fluid placeholder='Image' 
                     name="image"
@@ -119,7 +132,7 @@ state = {
             </Form.Group>
             <Form.Group widths='equal'>
             <Form.Field>
-                <label>Update Notes</label>
+                <label>Contact Notes</label>
                 <Input 
                     fluid placeholder='Notes' 
                     name="notes"

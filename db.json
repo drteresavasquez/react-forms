@@ -19,18 +19,31 @@
       "notes": "These are some notes...",
       "phone": "615-739-3124",
       "rating": 5,
-      "image": "https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/03/1458289957powerful-images3.jpg"
+      "image": "https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/03/1458289957powerful-images3.jpg",
+      "title": "Fun One!"
     },
     {
       "email": "another@user.com",
+      "title": "Chief",
       "name": "Olivia Terry",
-      "company": "1977",
+      "company": "Acme Inc",
       "notes": "This is the best person ever",
       "phone": "6155022013",
       "rating": "5",
       "image": "https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=350",
       "ownerID": 1,
       "id": 3
+    },
+    {
+      "email": "dr.terry2013@gmail.com",
+      "name": "Eugene Terry",
+      "company": "MNPS",
+      "notes": "This is a great guy!",
+      "phone": "6155022013",
+      "rating": "5",
+      "image": "",
+      "ownerID": 1,
+      "id": 4
     }
   ]
 }

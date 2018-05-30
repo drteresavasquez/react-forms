@@ -91,7 +91,7 @@ export default class OneContact extends Component{
                 </Grid.Column>
                 <Grid.Column width={8}>
                     <h1>{this.state.contact.name}</h1>
-                    <p>{this.state.contact.company}, {this.state.contact.position}</p>
+                    <p>{this.state.contact.company}, {this.state.contact.title}</p>
                     <p>{this.state.contact.phone}</p>
                     <p><a href={`mailto:${this.state.contact.email}`}>{this.state.contact.email}</a></p>
                     <p>{this.state.contact.notes}</p>

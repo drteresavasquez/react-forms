@@ -11,6 +11,7 @@ state = {
       phone: this.props.person.phone  || '',
       rating: this.props.person.rating  || '',
       image: this.props.person.image  || '',
+      title: this.props.person.title  || '',
     }
   };
 
@@ -23,6 +24,7 @@ state = {
     userObject.phone = this.state.fields.phone;
     userObject.rating = this.state.fields.rating;
     userObject.image = this.state.fields.image;
+    userObject.title = this.state.fields.title;
     this.props.saveUpdate(userObject);
 
     console.log("userObject", userObject);
@@ -36,6 +38,7 @@ state = {
         phone: '',
         rating: '',
         image: '',
+        title: '',
       }
     });
     evt.preventDefault();
@@ -103,6 +106,16 @@ state = {
                     name="rating"
                     type='text'
                     value={this.state.fields.rating}
+                    onChange={this.onInputChange}
+                />
+            </Form.Field>
+            <Form.Field>
+                <label>Update Title</label>
+                <Input 
+                    fluid placeholder='Title' 
+                    name="title"
+                    type='text'
+                    value={this.state.fields.title}
                     onChange={this.onInputChange}
                 />
             </Form.Field>

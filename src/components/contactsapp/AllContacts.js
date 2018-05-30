@@ -105,7 +105,7 @@ export default class AllContacts extends Component {
             <div>
                 {this.openForm()}
                 <h2>All Contacts</h2>
-                <ContactsList contacts={this.state.contacts} />
+                <ContactsList contacts={this.state.contacts} deleteContact={this.deleteContact}/>
             </div>
         )
     }
@@ -125,7 +125,7 @@ class ContactsList extends Component{
                 rating={contact.rating}
                 phone={contact.phone}
                 email={contact.email}
-                // deleteContact={this.props.deleteContact}
+                deleteContact={this.props.deleteContact}
             />
         ));
         return(

@@ -16,6 +16,7 @@ npm i
 - Semantic-UI-CSS
 - WebPack
 - StyleGuidist
+- JSON Server
 
 ## Start Your Servers in new terminal tabs
 Note: You can [npm i concurrently](https://www.npmjs.com/package/concurrently) and set up your app to take one command to start all servers.

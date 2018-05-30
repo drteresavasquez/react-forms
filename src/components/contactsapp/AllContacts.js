@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Card, Button, Image } from 'semantic-ui-react';
+import { Card, Button, Image, Divider, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import AddForm from './AddForm';
 
 export default class AllContacts extends Component {
     state = {
-        contacts:[]
+        contacts:[],
+        addContact: false,
     }
 
     componentDidMount(){
@@ -16,7 +18,6 @@ export default class AllContacts extends Component {
         }else{
             this.loadContacts(this.props.user.id)
         }
-        
     }
 
     loadContacts = (id) => {
@@ -31,16 +32,85 @@ export default class AllContacts extends Component {
         })
     }
 
+    saveUpdate = (userObject) => {
+        userObject.ownerID = this.props.user.id
+        return fetch(`http://localhost:4000/contacts/`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userObject)
+        }).then((response) => {
+          return response.json();
+        }).then((data) => {
+            this.setState({
+                contact: data,
+                addContact: false,
+            })
+            this.loadContacts(this.props.user.id);
+        })          
+}
+
+    addContact = () =>{
+        this.setState({
+            addContact: true
+        })
+    }
+    cancelUpdate = () =>{
+        this.setState({
+            addContact: false
+        })
+    }
+
+    openForm = () =>{
+        if(this.state.addContact){
+            return(
+                <div>
+                <Divider section />
+                <AddForm title="Add Contact" saveUpdate={this.saveUpdate} cancelUpdate={this.cancelUpdate}/>
+                <Divider section />
+                </div>
+            )
+        }else{
+            return(
+                <div>
+                    <Button 
+                        color='green' 
+                        onClick={this.addContact}
+                    >
+                    <Icon name='add user' />
+                        Add Contact
+                    </Button>
+                    <Divider section />
+                </div>
+            )
+        }
+    }
+
+    deleteContact = (id) => {
+        return fetch(`http://localhost:4000/contacts/${id}`, {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            }).then((response) => {
+                const storedUser = sessionStorage.getItem("user");
+                const storedUserObj = JSON.parse(storedUser);
+                this.loadContacts(storedUserObj.id);
+            })
+    }
 
     render () {
         return(
             <div>
+                {this.openForm()}
                 <h2>All Contacts</h2>
                 <ContactsList contacts={this.state.contacts} />
             </div>
         )
     }
 }
+
 
 class ContactsList extends Component{
     render(){
@@ -55,7 +125,7 @@ class ContactsList extends Component{
                 rating={contact.rating}
                 phone={contact.phone}
                 email={contact.email}
-                // deleteContact={this.props.deleteContact}
+                deleteContact={this.props.deleteContact}
             />
         ));
         return(

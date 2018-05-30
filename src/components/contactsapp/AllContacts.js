@@ -11,14 +11,19 @@ export default class AllContacts extends Component{
     }
 
     componentDidMount(){
-        this.getAllContacts();
+        const storedUser = sessionStorage.getItem("user");
+        
+        if(storedUser){
+            const storedUserObj = JSON.parse(storedUser);
+            this.loadContacts(storedUserObj.id)
+        }else{
+            this.loadContacts(this.props.user.id)
+        }
+        
     }
 
-    getAllContacts = () => {
-        const storedUser = sessionStorage.getItem("user");
-        const storedUserObj = JSON.parse(storedUser);
-
-        fetch(`http://localhost:4000/contacts?ownerID=${storedUserObj.id}`)
+    loadContacts = (id) => {
+        fetch(`http://localhost:4000/contacts?ownerID=${id}`)
         .then((data)=>{
             return data.json();
         }).then((userContacts)=>{
@@ -80,8 +85,10 @@ class CardExampleHeaderCard extends Component{
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                    <div className='ui two buttons'>
-                    <Button basic color='green'>Follow Up</Button>
+                    <div className='ui four buttons'>
+                    <Button basic color='green' icon="call"></Button>
+                    <Button basic color='green' icon="talk"></Button>
+                    <Button basic color='green' icon="mail"></Button>
                     <Button basic color='blue'>Edit</Button>
                     </div>
                 </Card.Content>

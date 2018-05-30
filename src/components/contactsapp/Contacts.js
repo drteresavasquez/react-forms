@@ -26,6 +26,7 @@ export default class Authentication extends Component{
     }
 
     authenticateUser = (email, password) => {
+        console.log(email, password)
         fetch(`http://localhost:4000/users?email=${email}&&${password}`)
         .then((data)=>{
             return data.json();

@@ -12,7 +12,7 @@
     {
       "id": 1,
       "ownerID": 1,
-      "name": "Sepia Guy",
+      "name": "Sepia Guy 2",
       "email": "email@email.com",
       "phone": "615-555-5555",
       "company": "Acme",
@@ -37,7 +37,7 @@
       "id": 4,
       "ownerID": 1,
       "name": "This is a test",
-      "email": "email@email.com",
+      "email": "email@email.net",
       "phone": "615-555-5555",
       "company": "Acme",
       "position": "Head Honchoita",

@@ -1,90 +1,106 @@
 import React, { Component } from 'react';
-import { Card } from 'semantic-ui-react'
+import { Card, Button, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default class AllContacts extends Component {
-
     state = {
-        contacts:[
-            {
-              "id": 1,
-              "ownerID": 1,
-              "name": "This is a test",
-              "email": "email@email.com",
-              "phone": "615-555-5555",
-              "company": "Acme",
-              "position": "Head Honchoita",
-              "notes": "These are the notes I took on this asshole."
-            },
-            {
-              "id": 2,
-              "ownerID": 1,
-              "name": "This is a test",
-              "email": "email@email.com",
-              "phone": "615-555-5555",
-              "company": "Acme",
-              "position": "Head Honchoita",
-              "notes": "These are the notes I took on this asshole."
-            },
-            {
-              "id": 3,
-              "ownerID": 1,
-              "name": "This is a test",
-              "email": "email@email.com",
-              "phone": "615-555-5555",
-              "company": "Acme",
-              "position": "Head Honchoita",
-              "notes": "These are the notes I took on this asshole."
-            },
-            {
-              "id": 4,
-              "ownerID": 1,
-              "name": "This is a test",
-              "email": "email@email.com",
-              "phone": "615-555-5555",
-              "company": "Acme",
-              "position": "Head Honchoita",
-              "notes": "These are the notes I took on this asshole."
-            }
-          ]
+        contacts:[]
     }
+
+    componentDidMount(){
+        const storedUser = sessionStorage.getItem("user");
+        
+        if(storedUser){
+            const storedUserObj = JSON.parse(storedUser);
+            this.loadContacts(storedUserObj.id)
+        }else{
+            this.loadContacts(this.props.user.id)
+        }
+        
+    }
+
+    loadContacts = (id) => {
+        fetch(`http://localhost:4000/contacts?ownerID=${id}`)
+        .then((data)=>{
+            return data.json();
+        }).then((userContacts)=>{
+            this.setState({
+                contacts: userContacts
+            })
+            console.log(userContacts)
+        })
+    }
+
+
     render () {
         return(
             <div>
-                <h1> All Contacts </h1>
+                <h2>All Contacts</h2>
                 <ContactsList contacts={this.state.contacts} />
             </div>
         )
     }
 }
 
-class ContactsList extends Component {
-    render() {
-        const contacts = this.props.contacts.map((contact) => (
+class ContactsList extends Component{
+    render(){
+        const contacts = this.props.contacts.map((contact)=>(
             <CardExampleHeaderCard
-            key = {contact.id}
-            id = {contact.id}
-            name = {contact.name}
-            company = {contact.company}
-            notes = {contact.notes}
+                key={contact.id}
+                id={contact.id}
+                name={contact.name}
+                company={contact.company}
+                notes={contact.notes}
+                image={contact.image}
+                rating={contact.rating}
+                phone={contact.phone}
+                email={contact.email}
+                // deleteContact={this.props.deleteContact}
             />
         ));
         return(
             <div>
-            {contacts}
+                <Card.Group>
+                    {contacts}
+                </Card.Group>
             </div>
         )
     }
+
 }
 
 
-const CardExampleHeaderCard = (props) => (
-  <Card.Group>
-    <Card>
-      <Card.Content>
-        <Card.Header>{props.name}</Card.Header>
-        <Card.Meta>{props.company}</Card.Meta>
-        <Card.Description>{props.notes}</Card.Description>
-      </Card.Content>
-    </Card>
-  </Card.Group>
-)
+class CardExampleHeaderCard extends Component{
+    render(){
+        return(
+            <Card>
+                <Card.Content>
+                    <Image floated='right' size='mini' src={this.props.image} />
+                    <Card.Header>
+                    <Link to={`/contactsapp/${this.props.id}`}>{this.props.name} ({this.props.company}) </Link>
+                    </Card.Header>
+                    <Card.Meta>  
+                    <Button 
+                        size='mini' 
+                        color='red'
+                        onClick={()=>{this.props.deleteContact(this.props.id)}}
+                    >
+                        Delete Contact                       
+                    </Button>
+                    </Card.Meta>
+                    <Card.Description>
+                    <strong>{this.props.notes}</strong>
+                    </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                    <div className='ui four buttons'>
+                    <Button basic color='teal' icon="call" href={`tel:${this.props.phone}`}></Button>
+                    <Button basic color='green' icon="talk" href={`sms:${this.props.phone}`}></Button>
+                    <Button basic color='blue' icon="mail" href={`mailto:${this.props.email}`}></Button>
+                    <Button basic color='orange' as={Link} to={`/contactsapp/${this.props.id}`}>Edit</Button>
+                    </div>
+                </Card.Content>
+            </Card>
+        )
+    }
+}

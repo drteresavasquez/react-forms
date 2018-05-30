@@ -13,7 +13,7 @@
     {
       "id": 1,
       "ownerID": 1,
-      "name": "Elmer Shields",
+      "name": "Homey Shields",
       "email": "elmer_shields@yahoo.com",
       "company": "ACME",
       "notes": "These are some notes...",
@@ -24,7 +24,7 @@
     {
       "id": 2,
       "ownerID": 1,
-      "name": "Elmer Shields",
+      "name": "Mista Shields",
       "email": "elmer_shields@yahoo.com",
       "company": "ACME",
       "notes": "These are some notes...",

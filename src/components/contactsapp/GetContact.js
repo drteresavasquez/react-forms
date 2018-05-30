@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './main.css';
 import OneContact from './OneContact';
@@ -12,3 +13,4 @@ const GetContact = ({ match : { params: {id}}}) => {
 }
 
 export default GetContact;
+

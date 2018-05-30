@@ -32,7 +32,6 @@ loadContacts = (id) => {
     })
 }
 
-
     render(){
         return(
             <div>

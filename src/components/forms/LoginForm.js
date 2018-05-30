@@ -54,11 +54,12 @@ export default class LoginForm extends React.Component{
       >
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='green' textAlign='center'>
-          <i className="fa fa-money fa-5x"></i><br /> Log-in to your account
+          <i className="fa fa-money fa-5x"></i><br /> 
+            Log-in to your account
           </Header>
           <span style={{color: 'red'}}>{this.props.errorMessage}</span>
           <Form size='large' 
-          // onSubmit={this.onFormSubmit}
+        
           >
             <Segment stacked>
             <span style={{color: 'red'}}>{this.state.fieldErrors.email}</span>
@@ -71,7 +72,7 @@ export default class LoginForm extends React.Component{
                 type='email'
                 onChange={this.onInputChange}
               />
-               <span style={{color: 'red'}}>{this.state.fieldErrors.password}</span>
+              <span style={{color: 'red'}}>{this.state.fieldErrors.password}</span>
               <Form.Input
                 fluid
                 name="password"

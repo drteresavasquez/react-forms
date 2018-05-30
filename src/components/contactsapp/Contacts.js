@@ -3,6 +3,7 @@ import './main.css';
 import LoginForm from './LoginForm';
 import AllContacts from './AllContacts';
 
+
 export default class Authentication extends Component{
     state= {
         authed: false,
@@ -23,11 +24,13 @@ export default class Authentication extends Component{
     }
 
 
+
     authenticateuser = (email, password) => {
         fetch(`http://localhost:4000/users?email=${email}&&${password}`)
         .then((data)=>{
             return data.json();
         }).then((userArray)=>{
+
             console.log("user array", userArray);
             if(userArray.legth===0){
                 console.log("user does not exist")
@@ -40,6 +43,7 @@ export default class Authentication extends Component{
                 sessionStorage.setItem('user', userObj);
             }
         })
+
         // if(this.state.user.email === email && this.state.user.password === password){
         //     this.setState({
         //         authed: true
@@ -59,11 +63,14 @@ isUserAuthed = () => {
     }
 }
 
+
     render(){
         return(
             <div className="main">
                 <h1>Welcome to Contact App</h1>
+
                 {this.isUserAuthed()}
+
             </div>
         )
     }

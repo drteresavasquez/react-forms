@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import { Grid, Image, Icon, Rating, Divider, Button } from 'semantic-ui-react';
 import './main.css';
@@ -65,3 +66,4 @@ export default class OneContact extends Component{
         )
     }
 }
+

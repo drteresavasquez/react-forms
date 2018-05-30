@@ -147,7 +147,7 @@ class CardExampleHeaderCard extends Component{
                 <Card.Content>
                     <Image floated='right' size='mini' src={this.props.image} />
                     <Card.Header>
-                    <Link to={`/contactsapp/${this.props.id}`}>{this.props.name} ({this.props.company}) </Link>
+                    <Link to={`/uglygirl/${this.props.id}`}>{this.props.name} ({this.props.company}) </Link>
                     </Card.Header>
                     <Card.Meta>  
                     <Button 

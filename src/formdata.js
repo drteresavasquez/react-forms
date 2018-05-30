@@ -22,7 +22,7 @@ const forms = [
         component: Contacts,
         title: "Contacts App",
         route: "/contactsapp",
-        description: "An app that allows users to input their contacts in a database and send email.",
+        description: "An app that allows users to input their contacts in a database and send email. It uses session storage, JSON server for API, semantic-ui-react and ReactJS.",
     }
   ]
 

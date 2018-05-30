@@ -11,17 +11,6 @@
   ],
   "contacts": [
     {
-      "id": 1,
-      "ownerID": 1,
-      "name": "Elmer Shields",
-      "email": "elmer_shields@yahoo.com",
-      "company": "ACME",
-      "notes": "These are some notes...",
-      "phone": "615-739-3124",
-      "rating": 5,
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
-    },
-    {
       "id": 2,
       "ownerID": 1,
       "name": "Elmer Shields",
@@ -30,7 +19,18 @@
       "notes": "These are some notes...",
       "phone": "615-739-3124",
       "rating": 5,
-      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
+      "image": "https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/03/1458289957powerful-images3.jpg"
+    },
+    {
+      "email": "another@user.com",
+      "name": "Olivia Terry",
+      "company": "1977",
+      "notes": "This is the best person ever",
+      "phone": "6155022013",
+      "rating": "5",
+      "image": "https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "ownerID": 1,
+      "id": 3
     }
   ]
 }

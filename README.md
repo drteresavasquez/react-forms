@@ -21,27 +21,27 @@ cd react-forms
 code .
 ```
 ### 4. Install Dependencies
-- StyleGuidist
+- [StyleGuidist](https://react-styleguidist.js.org/)
 ```
 npm install --save-dev react-styleguidist
 ```
-- Semantic-UI-React
+- [Semantic-UI-React](https://react.semantic-ui.com/introduction)
 ```
 npm install semantic-ui-react
 ```
-- Semantic-UI-CSS
+- [Semantic-UI-CSS](https://www.npmjs.com/package/semantic-ui-css)
 ```
 npm install semantic-ui-css
 ```
-- React-Router-Dom
+- [React-Router-DOM](https://www.npmjs.com/package/react-router-dom)
 ```
 npm install --save react-router-dom
 ```
-- JSON Server
+- [JSON Server](https://github.com/typicode/json-server)
 ```
 npm i json-server
 ```
-- WebPack: See next step
+- [WebPack](https://webpack.github.io/): See next step
 
 ### 5. Add WebPack to your package.json
 After installing dependencies, place the following line of code under devDependencies in your package.json
